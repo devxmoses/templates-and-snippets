@@ -2,17 +2,41 @@
 
 A personal collection of reusable code snippets, utilities, and boilerplates for future projects.
 
-## 📚 Contents
+## 📚 Repository Structure
 
-This repository contains organized, production-ready code snippets and templates across various frameworks and technologies:
+This repository is organized by **language**, **category**, and **use case** for easy navigation:
 
-### NestJS
-- **[JWT Authentication](./nestjs-jwt-auth/)** - Lightweight authentication without Passport.js
+### 🟨 JavaScript
+Backend frameworks, frontend utilities, and Node.js snippets.
+- **[NestJS](./javascript/nestjs/)** - Backend framework snippets
+  - [JWT Authentication](./javascript/nestjs/jwt-authentication/) - Lightweight auth without Passport.js
+
+### 🐍 Python
+Python libraries, utilities, and frameworks.
+- Coming soon...
+
+### 🔧 Utilities
+Language-agnostic utilities and helpers.
+- Environment configuration templates
+- Common helper functions
+- Shared utility modules
+
+### ⚙️ Tools
+Setup scripts, configuration templates, and automation tools.
+- Docker configurations
+- GitHub Actions workflows
+- Build and deployment scripts
+- Development environment setup
 
 ## 🎯 Purpose
 
-This repository serves as a personal knowledge base and quick-reference library for common patterns, utilities, and boilerplates that can be quickly integrated into new projects. Each snippet is designed to be:
+This repository serves as a personal knowledge base and quick-reference library for:
+- Common patterns and best practices
+- Reusable code snippets across different languages
+- Production-ready boilerplates and utilities
+- Quick integration into new projects
 
+Each snippet is designed to be:
 - **Self-contained** - Minimal dependencies, easy to copy and adapt
 - **Well-documented** - Clear explanations and usage examples
 - **Production-ready** - Tested and optimized for real-world use
@@ -20,16 +44,16 @@ This repository serves as a personal knowledge base and quick-reference library 
 
 ## 📖 How to Use
 
-1. Browse the folders to find relevant snippets
-2. Each folder contains detailed documentation on implementation
-3. Copy files directly into your projects
-4. Modify as needed for your specific use case
+1. Navigate to the language or category folder you need
+2. Review the README for detailed implementation instructions
+3. Copy the relevant files into your project
+4. Customize as needed for your specific use case
 
-## 🛠️ Tech Stack
+## 🛠️ Supported Technologies
 
-- NestJS
-- TypeScript
-- And more...
+- **JavaScript/TypeScript** - NestJS, Express, Node.js
+- **Python** - Django, FastAPI, Flask
+- **Tools & Utilities** - Docker, GitHub Actions, scripts
 
 ---
 
