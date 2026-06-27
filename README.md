@@ -8,25 +8,21 @@ This repository is organized by **language**, **category**, and **use case** for
 
 ### 🟨 JavaScript
 Backend frameworks, frontend utilities, and Node.js snippets.
-- **[NestJS JWT Authentication](./javascript/nestjs-jwt-authentication/)** - Lightweight auth without Passport.js
+- **[NestJS JWT Auth (No Passport)](./javascript/nestjs-jwt-auth-no-passport/)** - Lightweight JWT authentication without Passport.js
 - Coming soon...
 
 ### 🐍 Python
 Python libraries, utilities, and frameworks.
+- [Python Snippets](./python/) - Django, FastAPI, Flask, and more
 - Coming soon...
 
 ### 🔧 Utilities
 Language-agnostic utilities and helpers.
-- Environment configuration templates
-- Common helper functions
-- Shared utility modules
+- [Utilities](./utilities/) - Common helper functions, shared modules, and configuration templates
 
 ### ⚙️ Tools
 Setup scripts, configuration templates, and automation tools.
-- Docker configurations
-- GitHub Actions workflows
-- Build and deployment scripts
-- Development environment setup
+- [Tools](./tools/) - Docker, GitHub Actions, build scripts, and development environment setup
 
 ## 🎯 Purpose
 
