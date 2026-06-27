@@ -1,85 +1,36 @@
-# 🔒 NestJS JWT Authentication (Without Passport)
+# Templates and Snippets 🚀
 
-A lightweight, high-performance authentication snippet for NestJS using the native `@nestjs/jwt` module directly, bypassing the overhead of Passport.js. This setup utilizes a custom `AuthGuard` to extract and verify JSON Web Tokens (JWT) from incoming request headers.
+A personal collection of reusable code snippets, utilities, and boilerplates for future projects.
 
-## 🚀 Why No Passport?
-* **Zero Overhead:** Eliminates extra dependencies (`@nestjs/passport` and `passport-jwt`).
-* **Complete Control:** Full ownership over the token extraction, verification logic, and error handling.
-* **Modern NestJS Stack:** Built using native NestJS guards, execution contexts, and decorators.
+## 📚 Contents
 
-## 📁 Snippet Components
+This repository contains organized, production-ready code snippets and templates across various frameworks and technologies:
 
-This snippet consists of three core building blocks:
+### NestJS
+- **[JWT Authentication](./nestjs-jwt-auth/)** - Lightweight authentication without Passport.js
 
-1. **`auth.module.ts`**: Configures the asynchronous `JwtModule` with your environment secrets.
-2. **`auth.service.ts`**: Handles user validation, password hashing/comparison, and token generation.
-3. **`auth.guard.ts`**: A custom `CanActivate` guard that extracts the Bearer token, verifies it, and attaches the payload to the request context.
+## 🎯 Purpose
 
-## ⚙️ Prerequisites
+This repository serves as a personal knowledge base and quick-reference library for common patterns, utilities, and boilerplates that can be quickly integrated into new projects. Each snippet is designed to be:
 
-Ensure you have the required peer dependencies installed in your target NestJS project:
+- **Self-contained** - Minimal dependencies, easy to copy and adapt
+- **Well-documented** - Clear explanations and usage examples
+- **Production-ready** - Tested and optimized for real-world use
+- **Modular** - Easy to customize and extend
 
-```bash
-npm i @nestjs/jwt bcrypt
-npm i -D @types/bcrypt
-```
+## 📖 How to Use
 
-## 🛠️ Implementation Guide
+1. Browse the folders to find relevant snippets
+2. Each folder contains detailed documentation on implementation
+3. Copy files directly into your projects
+4. Modify as needed for your specific use case
 
-### 1. The Custom Auth Guard
-Protect your routes by applying the custom guard locally or globally.
+## 🛠️ Tech Stack
 
-```typescript
-import { CanActivate, ExecutionContext, Injectable, UnauthorizedException } from '@nestjs/common';
-import { JwtService } from '@nestjs/jwt';
-import { Request } from 'express';
-
-@Injectable()
-export class CustomAuthGuard implements CanActivate {
-  constructor(private jwtService: JwtService) {}
-
-  async canActivate(context: ExecutionContext): Promise<boolean> {
-    const request = context.switchToHttp().getRequest<Request>();
-    const token = this.extractTokenFromHeader(request);
-    
-    if (!token) {
-      throw new UnauthorizedException('Token missing');
-    }
-    try {
-      const payload = await this.jwtService.verifyAsync(token, {
-        secret: process.env.JWT_SECRET,
-      });
-      // Attach the payload to the request object so controllers can access it
-      request['user'] = payload;
-    } catch {
-      throw new UnauthorizedException('Invalid or expired token');
-    }
-    return true;
-  }
-
-  private extractTokenFromHeader(request: Request): string | undefined {
-    const [type, token] = request.headers.authorization?.split(' ') ?? [];
-    return type === 'Bearer' ? token : undefined;
-  }
-}
-```
-
-### 2. Guard Usage
-Apply it to your controllers or specific endpoints using the `@UseGuards` decorator:
-
-```typescript
-import { Controller, Get, UseGuards, Req } from '@nestjs/common';
-import { CustomAuthGuard } from './auth.guard';
-
-@Controller('profile')
-export class ProfileController {
-  @UseGuards(CustomAuthGuard)
-  @Get()
-  getProfile(@Req() req) {
-    return req.user; // Contains the verified JWT payload
-  }
-}
-```
+- NestJS
+- TypeScript
+- And more...
 
 ---
-*Part of the [Developer Toolbox](https://github.com) snippet library.*
+
+Feel free to use these snippets as starting points for your own projects!
