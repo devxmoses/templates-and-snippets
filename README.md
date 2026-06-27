@@ -8,8 +8,8 @@ This repository is organized by **language**, **category**, and **use case** for
 
 ### 🟨 JavaScript
 Backend frameworks, frontend utilities, and Node.js snippets.
-- **[NestJS](./javascript/nestjs/)** - Backend framework snippets
-  - [JWT Authentication](./javascript/nestjs/jwt-authentication/) - Lightweight auth without Passport.js
+- **[NestJS JWT Authentication](./javascript/nestjs-jwt-authentication/)** - Lightweight auth without Passport.js
+- Coming soon...
 
 ### 🐍 Python
 Python libraries, utilities, and frameworks.
